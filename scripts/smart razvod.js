@@ -5,10 +5,10 @@ contract brak {
     enum ActionChoices { send_h, send_w, send_t, razvodAuto, razvod50na50, razvodKoef }
     ActionChoices choice;
 
-    address own = 0x0B361c9Fd431fCaBE0A4D9d9F32E7680136C56d7;
-    address addOne = 0xE27623a11d5B67e2C4d54326eA5FB00f0eA20398;
-    address addTwo = 0x3d7992cFbBeeFaEdde4cFc44A68a93Dd0630709F;
-    address adThrid = 0x95Fa3CbF9D1e54226Be8Cb3373f2BDE5bA04A853;
+    address payable own = 0x0B361c9Fd431fCaBE0A4D9d9F32E7680136C56d7;
+    address payable addOne = 0xE27623a11d5B67e2C4d54326eA5FB00f0eA20398;
+    address payable addTwo = 0x3d7992cFbBeeFaEdde4cFc44A68a93Dd0630709F;
+    address payable addThrid = 0x95Fa3CbF9D1e54226Be8Cb3373f2BDE5bA04A853;
     uint p1 = 0; uint p2 = 0; uint p3 = 0;
     
     function send_h(uint amount)public
@@ -70,19 +70,19 @@ contract brak {
         selfdestruct(own);
     }
 
-    function getChoice()public constant returns(ActionChoices)
+    function getChoice()public returns(ActionChoices)
     {
         return choice;
     }
-    function getP1()public constant returns(uint)
+    function getP1()public returns(uint)
     {
         return p1;
     }
-    function getP2()public constant returns(uint)
+    function getP2()public returns(uint)
     {
         return p2;
     }
-    function getP3()public constant returns(uint)
+    function getP3()public returns(uint)
     {
         return p3;
     }
